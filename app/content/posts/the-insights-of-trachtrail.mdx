@@ -1,0 +1,29 @@
+---
+title: 'Insights on TráchtRail'
+description: 'The brief descriptive insights on TrachtRail & its purpose.'
+date: 29-06-2025
+---
+
+# What is TráchtRail?
+TráchtRail, is a web-front built application that utilizes the **Irish Rail API** to progressively display real-time information of inbound and outbound trains, display interactable markers on the map page & mny other features that consume the API. In replacement of it's previous version with less features & more open bugs (such as unhandled API-less requests, no fallback logic etc.).
+
+# What features does it have?
+So far, the web app has the following features that are currently useable:
+- Interactable map with clickable markers that toggle modal popups for both **train movements & station arrivals/departures**;
+- Nearby station and trains detection API
+- Update logs (added, but not pushed to production just yet...)
+... and more!
+
+ But with that, there's obiviously some planned features that are in the making, some of which being the **Share Arrival ETA** for train services, similarly seen on **Signalbox (where the inspiration came from).** 
+
+# Some keyfactors to consider about TráchtRail
+TráchtRail was solo-made on the grounds of Remix React & TypeScript and does no way overtake or replace the official services offered by Irish Rail themselves, it's more of a fan-made app like **bustimes.org** just with less of the popularity to the mix. TráchtRail is more foreseen as a tool for trainspotters or for those who want to view realtime info outside of the Irish Rail application aspect.
+
+In terms of data reliabiltiy, it tails a disclaimer: the data that is passed throughout various areas of the application purely relies on the data coming from Irish Rail's API to be somewhat accurate, which when tested both on the field has proven to be around 90% accurate still can have it's flairs. Likewise, it's an API which is updated by a computer of somewhat, there's always bound to be a mistake somewhere.
+This is where the newer 'in the works' feature **Share Arrival ETA** heavily relies on the data to be accurate - as it uses the data to determine when a train has arrived and departed a station to then determine how many stops are ahead until it arrives at the target station chosen by the end-user & and with the API being somewhat annoyingly usable - it's flairable where it hinders false bits of information where it might say that the train has already arrived or will arrive in 30 minutes when it arrives in 5.
+
+# How can I try-out TráchtRail or provide feedback?
+You can publically access version 1.1 at **[rail.thediabetic.dev](https://rail.thediabetic.dev)** where you can try out the features listed above. However, due to some strange tangent issue with GitHub and Visual Studio Code: the latest API migration changes for some reason do not work. Confusing, yes - it forces the app to rely on the proxied work-around within the Vite Configuration which had been commented out to forcefully migrate to the internally built routes. 
+As for it's opposing obselete twin, version 1.0b built on SvelteKit - you can still access it, but hasn't been migrated to use the newer workaround since **irish-rail-rest-api.fly.dev** had suddenly vanished.
+
+If you're willing to provide feedback in regards to what can be improved, added or modified about TráchtRail - send me an email by [clicking this link](mailto: taylor.thedev@proton.me). All feedback is kindly appericated towards development.
